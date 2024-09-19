@@ -52,9 +52,11 @@ public class Main {
 
         if (!consent) {
             System.out.println(colorize("Sorry to hear that. Have a nice day!", YELLOW_BACK()));
+            MainFrame mainFrame = new MainFrame("Monkey Mouse dissapproves!", "Oki... Bye...", "/Users/lindahoang/repos_johan/battleship-java/resources/SadMonkeyMouse.jpg");
             System.exit(2);
         }
         System.out.println(colorize("LEEEEETS GOOOOO!", YELLOW_BACK()));
+        MainFrame mainFrame = new MainFrame("Monkey Mouse approves!", "LEEEEETS GOOOOO!", "/Users/lindahoang/repos_johan/battleship-java/resources/HappyMonkeyMouse.jpg");
     }
 
     public static boolean parseConsent(String message){
