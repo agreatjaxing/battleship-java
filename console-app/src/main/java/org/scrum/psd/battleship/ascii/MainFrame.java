@@ -14,7 +14,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame(String title, String message, String file) {
         try {
-            setDefaultCloseOperation(EXIT_ON_CLOSE);
+            setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             contentPane = (JPanel) getContentPane();
             contentPane.setLayout(new BorderLayout());
             setSize(new Dimension(1000, 1000));

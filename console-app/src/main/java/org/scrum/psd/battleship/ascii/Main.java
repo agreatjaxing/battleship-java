@@ -17,7 +17,7 @@ public class Main {
 
     private static final Telemetry telemetry = new Telemetry();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         telemetry.trackEvent("ApplicationStarted", "Technology", "Java");
         System.out.println(colorize("                                     |__", MAGENTA_TEXT()));
         System.out.println(colorize("                                     |\\/", MAGENTA_TEXT()));
@@ -41,7 +41,7 @@ public class Main {
         StartGame();
     }
 
-    private static void IntroGame() {
+    private static void IntroGame() throws InterruptedException {
         System.out.println(colorize("Welcome to a mindblowing ship bonanza. Are you ready to rumble?", YELLOW_BACK()));
         System.out.println(colorize("(Yes / No)", YELLOW_BACK()));
 
@@ -53,6 +53,7 @@ public class Main {
         if (!consent) {
             System.out.println(colorize("Sorry to hear that. Have a nice day!", YELLOW_BACK()));
             MainFrame mainFrame = new MainFrame("Monkey Mouse dissapproves!", "Oki... Bye...", "/Users/lindahoang/repos_johan/battleship-java/resources/SadMonkeyMouse.jpg");
+            Thread.sleep(5000);
             System.exit(2);
         }
         System.out.println(colorize("LEEEEETS GOOOOO!", YELLOW_BACK()));
