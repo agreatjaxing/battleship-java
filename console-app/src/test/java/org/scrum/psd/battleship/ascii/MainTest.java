@@ -26,4 +26,12 @@ public class MainTest {
         //then
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testParseMessage() {
+        boolean consent = Main.parseConsent("Yes");
+        Assertions.assertTrue(consent);
+        consent = Main.parseConsent("No");
+        Assertions.assertFalse(consent);
+    }
 }

@@ -34,9 +34,34 @@ public class Main {
         System.out.println(colorize(" \\_________________________________________________________________________|", MAGENTA_TEXT()));
         System.out.println("");
 
+        IntroGame();
+
         InitializeGame();
 
         StartGame();
+    }
+
+    private static void IntroGame() {
+        System.out.println(colorize("Welcome to a mindblowing ship bonanza. Are you ready to rumble?", YELLOW_BACK()));
+        System.out.println(colorize("(Yes / No)", YELLOW_BACK()));
+
+        Scanner scanner = new Scanner(System.in);
+        String message = scanner.nextLine();
+
+        boolean consent = parseConsent(message);
+
+        if (!consent) {
+            System.out.println(colorize("Sorry to hear that. Have a nice day!", YELLOW_BACK()));
+            System.exit(2);
+        }
+        System.out.println(colorize("LEEEEETS GOOOOO!", YELLOW_BACK()));
+    }
+
+    public static boolean parseConsent(String message){
+        if (message.equals("Yes")){
+            return true;
+        }
+        return false;
     }
 
     private static void StartGame() {
